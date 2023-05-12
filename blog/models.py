@@ -4,5 +4,4 @@ from django.db import models
 class Blog(models.Model):
     title = models.CharField(max_length=100)
     text = models.TextField()
-    url = models.URLField()
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateField(auto_now_add=True)

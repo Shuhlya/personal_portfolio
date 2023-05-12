@@ -5,6 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>My blog</h1>
+    <h1>Blog</h1>
+    <h2>Serhii was writtten: {{ blogs.count }} blogs</h2>
+
+    {% for blog in blogs %}
+        <h3>{{ blog.title }}</h3>
+        <p>{{ blog.date }}</p>
+        <p>{{ blog.text }}</p>
+    {% endfor %}
 </body>
 </html>
