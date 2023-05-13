@@ -5,6 +5,7 @@ from .models import Blog
 def blogs(request):
     context = {
         'blogs': Blog.objects.order_by('-id')[:4],
+        'blogs_count': Blog.objects.count()
     }
     return render(request, 'blog/all_blogs.html', context)
 
