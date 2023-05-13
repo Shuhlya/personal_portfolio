@@ -9,9 +9,12 @@
     <h2>Serhii was writtten: {{ blogs.count }} blogs</h2>
 
     {% for blog in blogs %}
-        <h3>{{ blog.title }}</h3>
+        <a href="{% url 'blog:detail' blog.id %}">
+            <h3>{{ blog.title }}</h3>
+        </a>
         <p>{{ blog.date }}</p>
         <p>{{ blog.text }}</p>
     {% endfor %}
+    <a href="{% url 'home' %}">Home</a>
 </body>
 </html>
