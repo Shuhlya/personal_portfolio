@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(9r$m-7pt66p6pvau5q+^hhh=*6yu@dh%%5!@w&pki9f@l-)6!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com']
 
 
 # Application definition
@@ -127,3 +127,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from .local_settings import *
+except ImportError:
+    print('Looks like no local file!')
